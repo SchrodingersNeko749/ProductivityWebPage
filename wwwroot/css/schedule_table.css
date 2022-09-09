@@ -1,0 +1,63 @@
+td{
+    min-width: none;
+}
+.day_cell_title{
+    width:1rem;
+}
+.day_cell{
+    width:1rem;
+    background-color: #a734c7;
+}
+.hour_cell{
+    width: 1rem;
+}
+.task_cell{
+    width: 14rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+.table_title{
+    font-family: "Nothing You Could Do", cursive;
+    color: #FF33CC;
+    margin: 0;
+    text-shadow: 3px 3px 3px #7a00f4;
+    text-align: center;
+    
+}
+.schedule_table{
+    display: block;
+}
+
+.billboard-content{
+    
+    z-index: 1;
+    margin: auto;
+    padding: 1rem;
+    color: white;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    text-shadow: 1px 1px 0.7rem white; inset: 1px 1px 1rem white;
+    box-shadow: 1px 1px 0.1rem #fff, 0 0 0.2rem #fff, 0 0 1rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 4.8rem #BC13FE, 
+    inset 1px 1px 0.1rem #fff, inset 0 0 0.2rem #fff, inset 0 0 1rem #bc13fe, inset 0 0 0.8rem #bc13fe, inset 0 0 4.8rem #BC13FE
+
+}
+.billboard-head{
+    display: grid;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(355deg);
+    background-color: #181818;
+    text-shadow: 1px 1px white inset 1px 1px white;
+    border: solid black;
+}
+.billboard{
+    top: 4rem;
+    left: 24rem;
+    min-width: 40%;
+    min-height: 40%;
+    perspective: 200px;
+    position: absolute;
+
+}

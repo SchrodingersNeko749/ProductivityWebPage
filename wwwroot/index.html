@@ -3,157 +3,83 @@
     <head>
         <title> 🌊 s y n t h w a v e 🌊 </title>
         <style>
-            @import url('/vars.css');
+            @import url('/css/vars.css');
+            @import url('/css/background.css');
+            @import url('/css/schedule_table.css');
+            @import url('/css/site.css');
             @import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
-            html, body {
-                  width: 100%;
-                  height: 100%;
-                  padding: 0;
-                  margin: 0;
-                }
-
-                #bg1 {
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  width: 100%;
-                  height: 100%;
-                  background: radial-gradient(circle at bottom ,#FD8046,#D36C50 ,#AA585B,#804565 ,#573170 ,#2D1D7A 50%, #0c0629);
-                  background-repeat: no-repeat;
-                  background-size: 300% 300%;
-                  animation: gradient1 40s ease-in infinite;
-                }
-
-                #bg2 {
-                  position: absolute;
-                  top: 0%;
-                  left: 0%;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  width: 100%;
-                  height: 100%;
-                  background: radial-gradient(circle at bottom ,#C9F6FF,#97EBF4 ,#7AE5F5,#65DDEF ,#35D6ED);
-                  background-size: 100% 100%;
-                }
-
-            @keyframes gradient1 { 
-                0%{background-position:0% 0%;opacity: 100%;}/*sunrise start*/
-                15%{opacity: 100%;}/*noon start*/
-                25%{background-position:50% 100%;opacity: 30%;} /*noon*/
-                40%{opacity: 100%;}/*noon end or sunset start*/
-                50%{background-position:100% 0%;opacity: 100%;}/*sunset end*/
-                75%{background-position:50% 0%;}/*night start*/
-                100%{background-position:0% 0%; }/*night end*/
-            }
-            table{
-            border: 1px solid black;
-            border-radius: 1rem;
-            background-color: #100634;
-            color: #8a1f7d;
-            }
-            .day_cell_title{
-                width:1rem;
-                max-width: 1rem;
-            }
-            .day_cell{
-                width:1rem;
-                background-color: #a734c7;
-                max-width: 1rem;
-            }
-            .hour_cell{
-                width: 1rem;
-            }
-            .task_cell{
-                width: 15rem;
-                border-collapse: collapse;
-                text-align: center;
-            }
-            .table_title{
-                font-family: "Nothing You Could Do", cursive;
-                color: #FF33CC;
-                margin: 0;
-                text-shadow: 3px 3px 0px #7a00f4;
-                text-align: center;
-            }
-            .schedule_table{
-                display: none;
-                margin: auto;
-                border:1px solid black;
-                width: 50%;
-                padding: 1rem;
-            }
-            .navbar{
-                width: 100%;
-                min-height: 1rem;
-                background-color: #7a00f4;
-            }
-            .container{
-                margin: 1rem;
-            }
         </style>
+        <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>  
+        <script src="js/schedule_table.js" type="text/javascript"></script>  
+
+        <script src="js/background.js" type="text/javascript"></script>  
+        <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
+
     </head>
     <body>
         <div id="bg2"></div>
         <div id="bg1"></div>
-        <table class="schedule_table">
-            <tr>
-                <th colspan = "9" class="table_title">Daily Schedule</th>
-            </tr> 
-            <tr>
-                <td colspan="2">Starting Date:</td><td colspan="7">Finish Date:</td>
-            </tr>
-            <tr>
-                <td class="hour_cell">Hours</td>
-                <td class ="task_cell" >Task Name</td>
-                <td class="day_cell_title">Mon</td><td class="day_cell_title">Tue</td><td class="day_cell_title">Wed</td><td class="day_cell_title">Thu</td><td class="day_cell_title">Fri</td><td class="day_cell_title">Sat</td><td class="day_cell_title">Sun</td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >Waking up and breakfast</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >1h long walk</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >work</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >spanish study</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >lunch + mischellaneous</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >CTF / cybersecurity study</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >projects</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >back up time</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-            <tr>
-                <td class="hour_cell">00:00</td>
-                <td class ="task_cell" >Meditation</td>
-                <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
-            </tr>
-        </table>
+        <div class="billboard">
+            <div class="billboard-head">
+                <div class="billboard-content">
+                    <h1 class="table_title">Daily Schedule</h1>
+                    <table class="schedule_table">
+                        <tr>
+                            <td colspan="2">Starting Date:</td><td colspan="7">Finish Date:</td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">Hours</td>
+                            <td class ="task_cell" >Task Name</td>
+                            <td class="day_cell_title">Mon</td><td class="day_cell_title">Tue</td><td class="day_cell_title">Wed</td><td class="day_cell_title">Thu</td><td class="day_cell_title">Fri</td><td class="day_cell_title">Sat</td><td class="day_cell_title">Sun</td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >Waking up and breakfast</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >1h long walk</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >work</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >spanish study</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >lunch + mischellaneous</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >CTF / cybersecurity study</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >projects</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >back up time</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                        <tr>
+                            <td class="hour_cell">00:00</td>
+                            <td class ="task_cell" >Meditation</td>
+                            <td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td><td class="day_cell"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
