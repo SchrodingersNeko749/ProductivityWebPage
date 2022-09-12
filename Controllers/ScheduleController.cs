@@ -17,13 +17,10 @@ public class ScheduleController : ControllerBase
         _logger.LogInformation("Schedule controller constructor");
     }
     [HttpGet]
-    [Route("/api/datass")]
-    public string GetProject(int id)
+    [Route("/api/project")]
+    public Project GetProject(string time)
     {
-        if(id == 1)
-        return _Schedule_service.Datass();
-        else
-        return "nothing";
+       return _Schedule_service.GetCurrentProject(time);
     }
     // public void GetProjects()
     // {
@@ -33,10 +30,4 @@ public class ScheduleController : ControllerBase
     // {
 
     // }
-    [HttpGet]
-    [Route("/api/project")]
-    public string GetTimelySchedule()
-    {
-        return _Schedule_service.GetCurrentProject();
-    }
 }

@@ -12,9 +12,20 @@ namespace ProductivityWebPage.Services
         {
             return "datass";
         }
-        public string GetCurrentProject()
+        public Project GetCurrentProject(string datetimestring)
         {
-            return _repo.Get_ProjectById(1).name;
+            var now = DateTime.Parse(datetimestring);
+            var timetable = _repo.GetTimeTable(); 
+            try
+            {
+                var id = timetable.SingleOrDefault(t => t.start_time <= now && now < t.end_time).project_id;
+                return _repo.Get_ProjectById(id);
+            }
+            catch (System.NullReferenceException)
+            {
+                return new Project("Test");
+                throw;
+            }
         }
     }
 }

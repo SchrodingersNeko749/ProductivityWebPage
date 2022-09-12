@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductivityWebPage.Model;
 
@@ -10,9 +11,10 @@ using ProductivityWebPage.Model;
 namespace ProductivityWebPage.Migrations
 {
     [DbContext(typeof(ScheduleContext))]
-    partial class ScheduleContextModelSnapshot : ModelSnapshot
+    [Migration("20220910144041_added_start_end_time")]
+    partial class added_start_end_time
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.8");

@@ -48,5 +48,9 @@ namespace ProductivityWebPage.Model
         {
             
         }
+        public List<TimeTable> GetTimeTable()
+        {
+            return  _db.TimeTable.ToList();
+        }
     }
 }
