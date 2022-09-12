@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 public class TodoItem
 {
     public TodoItem()
@@ -11,6 +12,7 @@ public class TodoItem
         description = _description;
         status = "In Progress";
     }
+    [Key]
     public int id {get; set;}
     public int project_id {get; set;}
     public string name {get; set;}

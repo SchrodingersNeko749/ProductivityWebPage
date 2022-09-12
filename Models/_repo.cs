@@ -9,48 +9,58 @@ namespace ProductivityWebPage.Model
         {
             _db = new ScheduleContext();
         }
-        public TodoItem Get_TodoItem(int id)
+        public TodoItem GetTodoItem(int id)
         {
             var todo = _db.TodoItems
                 .OrderBy(t => t.id)
                 .First();
             return todo;
         }
-        public void Add_TodoItem(TodoItem todo)
+        public TodoItem GetProjectTodoItem(int project_id)
+        {
+            var todo = _db.TodoItems
+                .OrderBy(t => t.id)
+                .Single(t => t.project_id == project_id);
+            return todo;
+        }
+        public void AddTodoItem(TodoItem todo)
         {
             _db.TodoItems.Add(todo);
             _db.SaveChanges();
         }
-        public void Delete_TodoItem()
+        public void DeleteTodoItem()
         {
 
         }
-        public void Change_TodoItem()
+        public void ChangeTodoItem()
         {
 
         }
-        public Project Get_ProjectById(int id)
+        public Project GetProjectById(int id)
         {
             var project = _db.Projects
                 .Where(p => p.id == id);
             return project.First();
-
         }
-        public void Add_Project()
+        public void AddProject()
         {
 
         }
-        public void Delete_Project()
+        public void DeleteProject()
         {
 
         }
-        public void Change_Project()
+        public void ChangeProject()
         {
             
         }
         public List<TimeTable> GetTimeTable()
         {
             return  _db.TimeTable.ToList();
+        }
+        public List<TodoItem> GetTodos()
+        {
+            return _db.TodoItems.ToList();
         }
     }
 }

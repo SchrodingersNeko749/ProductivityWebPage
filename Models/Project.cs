@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 public class Project 
 {
     public Project()
@@ -9,10 +10,10 @@ public class Project
     {
         name = _name;
     }
+    [Key]
     public int id {get; set;}
     public int progress {get; set;}
     public int streak {get; set;}
     public string? name {get; set;}
-    TodoItem? chore {get; set;}
-    public List<TodoItem>? TodoList {get; set;}
+    public int? chore_id {get; set;}
 }

@@ -14,13 +14,24 @@ public class ScheduleController : ControllerBase
     {
         _Schedule_service = new ScheduleService();
         _logger = logger;
-        _logger.LogInformation("Schedule controller constructor");
     }
     [HttpGet]
-    [Route("/api/project")]
+    [Route("/api/currentProject")]
     public Project GetProject(string time)
     {
        return _Schedule_service.GetCurrentProject(time);
+    }
+    [HttpGet]
+    [Route("/api/projectTodo")]
+    public TodoItem GetProjectTodo(int project_id)
+    {
+        return _Schedule_service.GetTodoItem (project_id);
+    }
+    [HttpPut]
+    [Route("/api/addTodo")]
+    public void Addtodo(int project_id, string todoname, string tododescription)
+    {
+        _Schedule_service.AddTodo(project_id, todoname, tododescription);
     }
     // public void GetProjects()
     // {
