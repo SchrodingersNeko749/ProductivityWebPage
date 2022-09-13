@@ -17,15 +17,15 @@ public class ScheduleController : ControllerBase
     }
     [HttpGet]
     [Route("/api/currentProject")]
-    public Project GetProject(string time)
+    public Project GetProject()
     {
-       return _Schedule_service.GetCurrentProject(time);
+       return _Schedule_service.GetCurrentProject("08:22:00");
     }
     [HttpGet]
     [Route("/api/projectTodo")]
     public TodoItem GetProjectTodo(int project_id)
     {
-        return _Schedule_service.GetTodoItem (project_id);
+        return _Schedule_service.GetProjectTodoItem(project_id);
     }
     [HttpPut]
     [Route("/api/addTodo")]

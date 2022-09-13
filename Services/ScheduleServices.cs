@@ -18,7 +18,7 @@ namespace ProductivityWebPage.Services
             var timetable = _repo.GetTimeTable(); 
             try
             {
-                var id = timetable.FirstOrDefault(t => t.start_time <= now && now < t.end_time).project_id;
+                var id = timetable.FirstOrDefault(t => t.StartTime <= now && now < t.EndTime).ProjectId;
                 return _repo.GetProjectById(id);
             }
             catch (System.NullReferenceException)
@@ -32,7 +32,8 @@ namespace ProductivityWebPage.Services
             TodoItem todo = new TodoItem(project_id, name, description);
             _repo.AddTodoItem(todo);
         }
-        public TodoItem GetTodoItem (int project_id)
+        
+        public TodoItem GetProjectTodoItem (int project_id)
         {
             return _repo.GetProjectTodoItem(project_id);
         }

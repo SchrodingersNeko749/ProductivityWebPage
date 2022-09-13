@@ -20,7 +20,7 @@ namespace ProductivityWebPage.Model
         {
             var todo = _db.TodoItems
                 .OrderBy(t => t.id)
-                .Single(t => t.project_id == project_id);
+                .Single(t => t.ProjectId == project_id);
             return todo;
         }
         public void AddTodoItem(TodoItem todo)
