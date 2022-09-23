@@ -6,7 +6,7 @@ $(document).ready(function(){
       $(this).css("background-color","#a734c7")
     })
     $(".day_cell").click(function(){
-      GetCurrentProject();
+      
     })
   });
 // Schedule , task , progress (optional) , streak (optional)

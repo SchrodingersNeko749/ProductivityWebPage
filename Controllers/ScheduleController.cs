@@ -19,7 +19,7 @@ public class ScheduleController : ControllerBase
     [Route("/api/currentProject")]
     public Project GetProject()
     {
-       return _Schedule_service.GetCurrentProject("08:22:00");
+       return _Schedule_service.GetCurrentProject();
     }
     [HttpGet]
     [Route("/api/projectTodo")]

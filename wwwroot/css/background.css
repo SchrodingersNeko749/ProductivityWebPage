@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
 
   #bg1 {
@@ -13,6 +14,7 @@ html, body {
     width: 100%;
     height: 100%;
     background: linear-gradient(to top ,#FD8046,#D36C50 ,#AA585B,#804565 ,#573170 ,#2D1D7A 50%, #0c0629);
+    /* background-image: url("/miami.jpg"); */
     background-repeat: no-repeat;
     background-size: 200% 200%;
     /*animation: sunrise_set 40s ease-in infinite;*/

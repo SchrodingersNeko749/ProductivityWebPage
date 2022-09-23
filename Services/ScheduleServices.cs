@@ -12,9 +12,9 @@ namespace ProductivityWebPage.Services
         {
             return "datass";
         }
-        public Project GetCurrentProject(string datetimestring)
+        public Project GetCurrentProject()
         {
-            var now = DateTime.Parse(datetimestring);
+            var now = DateTime.Now;
             var timetable = _repo.GetTimeTable(); 
             try
             {
@@ -23,7 +23,8 @@ namespace ProductivityWebPage.Services
             }
             catch (System.NullReferenceException)
             {
-                return new Project("Test");
+                // get a chore or project-less task
+                return null;
                 throw;
             }
         }
