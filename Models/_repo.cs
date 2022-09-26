@@ -18,10 +18,15 @@ namespace ProductivityWebPage.Model
         }
         public TodoItem GetProjectTodoItem(int project_id)
         {
-            var todo = _db.TodoItems
-                .OrderBy(t => t.id)
-                .Single(t => t.ProjectId == project_id && t.Status == "In Progress");
-            return todo;
+            var todos = _db.TodoItems
+                .Where(t => t.ProjectId == project_id);
+            return todos.First();
+        }
+        public IQueryable<TodoItem> GetProjectTodos(int project_id)
+        {
+            var todos = _db.TodoItems
+                .Where(t => t.ProjectId == project_id);
+            return todos;
         }
         public void AddTodoItem(TodoItem todo)
         {

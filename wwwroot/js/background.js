@@ -4,7 +4,6 @@ const d = new Date();
 const day_progress = (d.getHours()-sunrise)/daylight
 $(document).ready(function(){
     GetCurrentProject();
-    
     $.fn.clamp = function(number, min, max){
         if(number >= max)
         {
@@ -31,14 +30,7 @@ $(document).ready(function(){
         }
      };
      $.fn.UpdateTodo = function(todo) {
-        if(todo == null)
-        {
-            $(".description").text("Chore")
-        }
-        else
-        {
-            $("#description").text(todo.description)
-        }
+        $("#description").text(todo.description)
      };
 })
 $("#bg2").ready(function(){

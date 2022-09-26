@@ -23,8 +23,8 @@ namespace ProductivityWebPage.Services
             }
             catch (System.NullReferenceException)
             {
-                // get a chore or project-less task
-                return null;
+                Project p = _repo.GetProjectById(4);
+                return p;
                 throw;
             }
         }
@@ -37,6 +37,10 @@ namespace ProductivityWebPage.Services
         public TodoItem GetProjectTodoItem (int project_id)
         {
             return _repo.GetProjectTodoItem(project_id);
+        }
+        public IQueryable<TodoItem> GetProjectTodoItems (int project_id)
+        {
+            return _repo.GetProjectTodos(project_id);
         }
     }
 }

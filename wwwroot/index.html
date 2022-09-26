@@ -39,5 +39,24 @@
                 </div>
             </div>
         </div>
+        <div class="todo-modal">        
+            <table id="todo-table">
+                <tr>
+                    <th class="todo-th">Name</th>
+                    <th class="todo-th">Description</th>
+                    <th class="todo-th">Status</th>
+                </tr>
+                <tr class="todo-template">
+                    <td class="todo-td">name</td>
+                    <td class="todo-td">description</td>
+                    <td class="todo-td">status</td>
+                </tr>
+            </table>
+            <form onsubmit="return(PrepareTodo());" name="todoform" >
+                <input class= "todo-input" type ="text" placeholder="name" name="name">
+                <input class= "todo-input" type ="text" placeholder="description" name="description">
+                <input class= "todo-button" type ="button" value="Add">
+            </form>
+        </div>
     </body>
 </html>

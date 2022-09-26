@@ -61,3 +61,49 @@ td{
     perspective: 210px;
     position: absolute;
 }
+#todo-table{
+    border-collapse: collapse;
+    color: white;
+    border: solid 1px;
+}
+.todo-th{
+    min-width: 9rem;
+    border: solid 1px;
+    
+}
+
+.todo-td{
+    min-width: 9rem;
+    border: solid 1px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.todo-template {
+    display: none;
+}
+.todo-modal{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+.todo-row{
+
+
+}
+::placeholder {
+    color: white;
+    opacity: 1; 
+  }
+.todo-input{
+    background: transparent;
+    border: 0;
+    border-bottom: 1px dashed #83a4c5;
+    width: 275px;
+    outline: 0;
+    padding: 0;
+    font-style: italic;
+    width: revert;
+    color: white;
+    
+}

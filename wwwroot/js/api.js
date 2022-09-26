@@ -9,9 +9,16 @@ function GetCurrentProject() {
     
 }
 function GetProjectTodo(projectId) {
-    fetch("/api/projectTodo")
+    fetch("/api/projectTodos")
     .then(response => response.json())
-    .then(todo =>{
-        $.fn.UpdateTodo(todo);
+    .then(todos =>{
+        todos.forEach(todo => {
+            $.fn.AddTodo(todo);
+        });
     })
+}
+function PrepareTodo()
+{
+    alert("adaw")
+    console.log(document.todoform.name, document.todoform.description)
 }

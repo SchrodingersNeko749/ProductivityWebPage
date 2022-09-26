@@ -27,6 +27,12 @@ public class ScheduleController : ControllerBase
     {
         return _Schedule_service.GetProjectTodoItem(project_id);
     }
+        [HttpGet]
+    [Route("/api/projectTodos")]
+    public IQueryable<TodoItem> GetProjectTodos(int project_id)
+    {
+        return _Schedule_service.GetProjectTodoItems(project_id);
+    }
     [HttpPut]
     [Route("/api/addTodo")]
     public void Addtodo(int project_id, string todoname, string tododescription)
