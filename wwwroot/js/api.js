@@ -9,7 +9,7 @@ function GetCurrentProject() {
     
 }
 function GetProjectTodo(projectId) {
-    fetch("/api/projectTodos")
+    fetch("/api/projectTodos?project_id="+projectId)
     .then(response => response.json())
     .then(todos =>{
         todos.forEach(todo => {
@@ -20,5 +20,19 @@ function GetProjectTodo(projectId) {
 function PrepareTodo()
 {
     alert("adaw")
-    console.log(document.todoform.name, document.todoform.description)
+    const todo = {
+        name: document.todoform.name,
+        description: document.todoform.description,
+    };
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(todo),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    console.log(options)
+    fetch("/api/addTodo", options)
+    .then(res => res.json())
+    .then(res => console.log(res));
 }

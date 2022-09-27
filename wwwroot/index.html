@@ -39,7 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="todo-modal">        
+        <div class="todo-modal">     
+            <h1 id="todo-project-name">Project Name</h1>   
             <table id="todo-table">
                 <tr>
                     <th class="todo-th">Name</th>
@@ -52,10 +53,10 @@
                     <td class="todo-td">status</td>
                 </tr>
             </table>
-            <form onsubmit="return(PrepareTodo());" name="todoform" >
+            <form action="javascript:PrepareTodo();" name="todoform" >
                 <input class= "todo-input" type ="text" placeholder="name" name="name">
                 <input class= "todo-input" type ="text" placeholder="description" name="description">
-                <input class= "todo-button" type ="button" value="Add">
+                <input class= "todo-button" type ="submit" value="Add">
             </form>
         </div>
     </body>

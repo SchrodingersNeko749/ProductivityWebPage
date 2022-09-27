@@ -33,18 +33,10 @@ public class ScheduleController : ControllerBase
     {
         return _Schedule_service.GetProjectTodoItems(project_id);
     }
-    [HttpPut]
+    [HttpPost]
     [Route("/api/addTodo")]
-    public void Addtodo(int project_id, string todoname, string tododescription)
+    public void Addtodo(TodoItem todo)
     {
-        _Schedule_service.AddTodo(project_id, todoname, tododescription);
+        _Schedule_service.AddTodo(todo);
     }
-    // public void GetProjects()
-    // {
-
-    // }
-    // public void GetTodos()
-    // {
-
-    // }
 }

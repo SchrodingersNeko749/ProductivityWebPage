@@ -22,6 +22,7 @@ $(document).ready(function(){
         }
         else
         {
+            $("#todo-project-name").text(project.name)
             $(".billboard-title").text(project.name)
             $("#description").text(project.description)
             $("#progress").text("Progress: "+project.progress+"%")

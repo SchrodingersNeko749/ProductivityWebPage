@@ -28,9 +28,8 @@ namespace ProductivityWebPage.Services
                 throw;
             }
         }
-        public void AddTodo(int project_id, string name, string description)
+        public void AddTodo(TodoItem todo)
         {
-            TodoItem todo = new TodoItem(project_id, name, description);
             _repo.AddTodoItem(todo);
         }
         
