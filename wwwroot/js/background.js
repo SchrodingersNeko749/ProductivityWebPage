@@ -22,12 +22,15 @@ $(document).ready(function(){
         }
         else
         {
+            localStorage.setItem("projectid", project.id);
+            
             $("#todo-project-name").text(project.name)
             $(".billboard-title").text(project.name)
             $("#description").text(project.description)
             $("#progress").text("Progress: "+project.progress+"%")
             $("#steak").text("Streak: "+project.streak+"%")
-            GetProjectTodo(project.id)
+
+            GetProjectTodo(localStorage.getItem("projectid"))
         }
      };
      $.fn.UpdateTodo = function(todo) {

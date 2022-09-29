@@ -17,22 +17,31 @@ function GetProjectTodo(projectId) {
         });
     })
 }
-function PrepareTodo()
+async function PrepareTodo()
 {
-    alert("adaw")
+    tdprojectid = localStorage.getItem("projectid");
+    tdname = document.todoform.name.value;
+    tddescription = document.todoform.description.value;
+ 
     const todo = {
-        name: document.todoform.name,
-        description: document.todoform.description,
-    };
+        "id" : 0,
+        "projectId" : tdprojectid,
+        "name" : tdname,
+        "description" : tddescription,
+        "status" : "string"
+    }
+
+    console.log(todo)
     const options = {
         method: 'POST',
-        body: JSON.stringify(todo),
         headers: {
-            'Content-Type': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(todo)
     }
     console.log(options)
-    fetch("/api/addTodo", options)
-    .then(res => res.json())
-    .then(res => console.log(res));
+
+    const resp = await fetch("/api/addTodo", options)
+    console.log(resp)
 }
